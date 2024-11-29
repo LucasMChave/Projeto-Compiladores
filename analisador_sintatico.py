@@ -196,7 +196,7 @@ class Parser:
             no = ExpressaoBinaria(operador, no, termo.termo())
         return no
 
-    def termo(termo):
+    def produto(termo):
         no = termo.fator()
         while termo.token_atual.tipo in {"MULTIPLY", "DIVIDE"}:
             operador = termo.token_atual.valor
