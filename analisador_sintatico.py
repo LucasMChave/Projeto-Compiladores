@@ -189,11 +189,11 @@ class Parser:
         termo.consumir("RBRACE")
     
     def expressao(termo):
-        no = termo.termo()
+        no = termo.produto()
         while termo.token_atual.tipo in {"PLUS", "MINUS"}:
             operador = termo.token_atual.valor
             termo.consumir(termo.token_atual.tipo)
-            no = ExpressaoBinaria(operador, no, termo.termo())
+            no = ExpressaoBinaria(operador, no, termo.produto())
         return no
 
     def produto(termo):
